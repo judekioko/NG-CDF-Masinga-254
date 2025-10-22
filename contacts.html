@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Masinga NG-CDF</title>
+    <link rel="stylesheet" href="assets/css/global.css"> <!-- Link to styles.css -->
+    <link rel="stylesheet" href="assets/css/contacts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+  <!-- LEFT SIDE - Website Title -->
+  <div class="header-left">
+    <h1>
+      <img src="assets/images/cdf-logo.jpg" alt="Masinga Logo" class="logo">
+      Masinga NG-CDF Website
+    </h1>
+  </div>
+
+  <!-- RIGHT SIDE - Navigation & Menu Toggle -->
+  <div class="header-right">
+    <nav>
+      <ul>
+        <li><a href="index.html" ><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+        <li><a href="management.html"><i class="fas fa-user-tie"></i> Management</a></li>
+        <li><a href="allocations.html"><i class="fas fa-chart-pie"></i> Allocations</a></li>
+        <li><a href="committee.html"><i class="fas fa-users"></i> Committee</a></li>
+        <li><a href="downloads.html"><i class="fas fa-download"></i> Downloads</a></li>
+        <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a href="publications.html"><i class="fas fa-book"></i> Publications</a></li>
+        <li><a href="contacts.html" class="active"><i class="fas fa-envelope"></i> Contacts</a></li>
+        
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+    <section class="contact">
+        <h2><i class="fas fa-phone-alt"></i> Contact Us</h2>
+        <p>If you have any compliments, complaints, or suggestions, please reach out to us using the details below:</p>
+
+        <h3><i class="fas fa-user-tie"></i> Fund Account Manager</h3>
+        <p><strong><i class="fas fa-building"></i> Masinga NG-CDF</strong><br>
+        <i class="fas fa-map-marker-alt"></i> P.O. Box 121- 90141, Masinga.<br>
+        <strong><i class="fas fa-phone"></i> Telephone:</strong> <a href="tel:+254707318176">0707318176</a><br>
+        <strong><i class="fas fa-envelope"></i> Email:</strong> <a href="mailto:cdfmasinga@ngcdf.go.ke">cdfmasinga@ngcdf.go.ke</a></p>
+
+        <h3><i class="fas fa-comment-dots"></i> Feedback Form</h3>
+        <form action="submit_feedback.php" method="post">
+            <label for="name"><i class="fas fa-user"></i> Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email"><i class="fas fa-envelope"></i> Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="feedback_type"><i class="fas fa-list"></i> Type of Feedback:</label>
+            <select id="feedback_type" name="feedback_type" required>
+                <option value="compliment">Compliment</option>
+                <option value="complaint">Complaint</option>
+                <option value="suggestion">Suggestion</option>
+            </select>
+
+            <label for="message"><i class="fas fa-comment"></i> Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit"><i class="fas fa-paper-plane"></i> Submit Feedback</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Masinga NG-CDF. All Rights Reserved.</p>
+    </footer>
+    <script src="assets/js/contacts.js"></script>
+    <script src="assets/js/global.js"></script>
+</body>
+</html>
+

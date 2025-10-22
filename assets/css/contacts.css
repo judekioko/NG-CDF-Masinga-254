@@ -1,0 +1,105 @@
+/* ================================
+   Contacts Page Styles
+   ================================ */
+.contact {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #006600, #ff0000, #000000); /* Kenyan flag colors */
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #fff;
+}
+
+.contact p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.contact h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    color: #fff;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding-bottom: 0.3rem;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact label {
+    font-weight: bold;
+    color: #fff;
+}
+
+.contact input,
+.contact select,
+.contact textarea {
+    padding: 0.9rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.contact input:focus,
+.contact select:focus,
+.contact textarea:focus {
+    box-shadow: 0 0 8px #ff0000;
+    transform: scale(1.02);
+}
+
+.contact button {
+    background: #ff0000; /* Red from Kenyan flag */
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact button:hover {
+    background: #006600; /* Green */
+    transform: translateY(-2px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contact {
+        padding: 1.5rem;
+    }
+
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact h3 {
+        font-size: 1.3rem;
+    }
+}

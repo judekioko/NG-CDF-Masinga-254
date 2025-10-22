@@ -1,0 +1,156 @@
+/* ---------- Welcome Screen ---------- */
+#welcome-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, black, red, green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  text-align: center;
+  color: white;
+}
+
+.welcome-content {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+  border: 3px solid white;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+#welcome-screen h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+#welcome-screen p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#welcome-screen button {
+  background: white;
+  color: black;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#welcome-screen button:hover {
+  background: red;
+  color: white;
+}
+
+/* ---------- Community Section ---------- */
+.community-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: red;
+}
+.community-icons i {
+  transition: transform 0.3s ease, color 0.3s;
+}
+.community-icons i:hover {
+  transform: scale(1.2);
+  color: green;
+}
+
+.manager-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, black, red, green);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  width: 85%;
+  max-width: 900px;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.manager-photo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.manager-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
+.manager-name {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.manager-name span {
+  font-size: 0.8rem;
+  color: #f1f1f1;
+  opacity: 0.9;
+}
+
+.manager-text {
+  flex: 1;
+  line-height: 1.5;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+
+/* ---------- Section Boxes ---------- */
+section {
+  width: 90%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  animation: fadeInUp 1s ease-in-out;
+  color: white;
+}
+section h2, section h3, section h4 {
+  color: #ff0000;
+}
+
+/* Map styling */
+#map-section iframe {
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.6);
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+@keyframes fadeInUp {
+  from {opacity:0; transform:translateY(50px);}
+  to {opacity:1; transform:translateY(0);}
+}
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.05);}
+  100% {transform: scale(1);}
+}

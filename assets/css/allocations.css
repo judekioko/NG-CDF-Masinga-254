@@ -1,0 +1,132 @@
+/* ===== Allocations Section ===== */
+.allocations {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    position: relative;
+}
+
+/* Fade-in content */
+.allocations h1,
+.allocations h2,
+.allocations p,
+.allocations blockquote,
+.allocations table {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.allocations.visible h1,
+.allocations.visible h2,
+.allocations.visible p,
+.allocations.visible blockquote,
+.allocations.visible table {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section headings */
+.allocations h1, .allocations h2 {
+    text-align: center;
+    color: #005c3c;
+    margin-bottom: 25px;
+}
+
+.allocations p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Blockquote */
+.allocations blockquote {
+    border-left: 5px solid #005c3c;
+    padding-left: 15px;
+    font-style: italic;
+    color: #555;
+    margin: 30px 0;
+}
+
+/* Table styling */
+.allocations table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Kenya flag watermark */
+.allocations table::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 200px;
+    background: url('Assets/images/kenya-flag.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.allocations table thead {
+    background-color: #005c3c;
+    color: white;
+    text-align: left;
+}
+
+.allocations table th,
+.allocations table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 1; /* above watermark */
+}
+
+/* Amount cells counting */
+.count {
+    font-weight: bold;
+    color: #e03e2d;
+}
+
+/* Zebra rows */
+.allocations table tbody tr:nth-child(even) {
+    background: rgba(0, 92, 60, 0.05);
+}
+
+/* Hover effect */
+.allocations table tbody tr:hover {
+    background-color: rgba(0, 92, 60, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .allocations table, .allocations table thead, .allocations table tbody, .allocations table th, .allocations table td, .allocations table tr {
+        display: block;
+    }
+    .allocations table tr {
+        margin-bottom: 15px;
+    }
+    .allocations table td {
+        padding-left: 50%;
+        text-align: left;
+        position: relative;
+    }
+    .allocations table td::before {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+        content: attr(data-label);
+    }
+}

@@ -1,0 +1,72 @@
+/* ================= Achievements Section ================= */
+.achievements {
+  padding: 4rem 2rem;
+  background: linear-gradient(270deg, #000000, #c8102e, #006400);
+  background-size: 600% 600%;
+  animation: kenyanFlag 18s ease infinite;
+  color: #fff;
+  line-height: 1.8;
+}
+
+@keyframes kenyanFlag {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.achievements h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #fff;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.achievements h3 {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  color: #ffd700; /* Gold headings */
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.achievements ul {
+  margin: 1rem 0 2rem 0;
+  padding-left: 1.2rem;
+}
+
+.achievements ul li {
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.achievements ul li.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.achievements ul li i {
+  color: #00ffcc; /* Teal accent for icons */
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.achievements .closing {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.achievements .closing i {
+  color: #e63946; /* Red heart */
+}

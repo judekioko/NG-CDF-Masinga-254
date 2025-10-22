@@ -1,0 +1,74 @@
+/* ================= Management Section ================= */
+.management {
+  padding: 4rem 2rem;
+  background: linear-gradient(270deg, #000000, #c8102e, #006400);
+  background-size: 600% 600%;
+  animation: kenyanFlagMove 18s ease infinite;
+  color: #fff;
+  text-align: center;
+}
+
+@keyframes kenyanFlagMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.management h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #ffd700; /* gold underline */
+}
+
+.management > p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.8;
+  color: #f8f8f8;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.team h3 {
+  font-size: 1.3rem;
+  color: #ffd700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.team p {
+  font-size: 1rem;
+  color: #f1f1f1;
+  margin-bottom: 1rem;
+}
+
+.team-card {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.team-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-card i {
+  font-size: 1.5rem;
+  color: #00ffcc;
+}
