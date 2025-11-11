@@ -1,0 +1,639 @@
+/* ===== Tenders Page Styles ===== */
+
+.tenders-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.tenders-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 0.8s ease;
+}
+
+.tenders-header h1 {
+    font-size: 2.5rem;
+    color: #006400;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tenders-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Quick Stats */
+.tender-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #006400, #008000);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 5px 20px rgba(0,100,0,0.2);
+    transition: all 0.3s ease;
+    animation: scaleIn 0.5s ease;
+}
+
+.stat-card:nth-child(2) {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(3) {
+    background: linear-gradient(135deg, #000000, #333333);
+    animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(4) {
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+    animation-delay: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.stat-card i {
+    font-size: 3rem;
+    opacity: 0.9;
+}
+
+.stat-content h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.stat-content p {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Tender Tabs */
+.tender-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.tab-btn {
+    padding: 15px 30px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tab-btn:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background: #006400;
+    color: white;
+    border-color: #006400;
+    box-shadow: 0 5px 15px rgba(0,100,0,0.3);
+}
+
+.tab-btn i {
+    font-size: 1.2rem;
+}
+
+/* Tender Content */
+.tender-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tender-content.active {
+    display: block;
+}
+
+/* Tenders Grid */
+.tenders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Tender Card */
+.tender-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-left: 5px solid #006400;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tender-card.urgent {
+    border-left-color: #ff0000;
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0%, 100% { box-shadow: 0 5px 20px rgba(255,0,0,0.2); }
+    50% { box-shadow: 0 5px 30px rgba(255,0,0,0.4); }
+}
+
+.tender-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.tender-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.status-badge {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-badge.open {
+    background: #4CAF50;
+    color: white;
+}
+
+.status-badge.awarded {
+    background: #2196F3;
+    color: white;
+}
+
+.status-badge.closed {
+    background: #999;
+    color: white;
+}
+
+.urgency-badge {
+    background: #ff0000;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.time-left {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tender-card h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tender-card h3 i {
+    color: #006400;
+    margin-top: 3px;
+}
+
+.tender-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.detail-item i {
+    color: #006400;
+    margin-top: 3px;
+    min-width: 20px;
+}
+
+.detail-item strong {
+    color: #333;
+    min-width: 90px;
+}
+
+.tender-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    flex: 1;
+    min-width: 150px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #006400;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #008000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,100,0,0.3);
+}
+
+.btn-secondary {
+    background: white;
+    color: #006400;
+    border: 2px solid #006400;
+}
+
+.btn-secondary:hover {
+    background: #006400;
+    color: white;
+}
+
+/* Info Box */
+.info-box {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-left: 5px solid #2196F3;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.info-box i {
+    font-size: 2rem;
+    color: #2196F3;
+}
+
+.info-box h3 {
+    margin: 0 0 10px 0;
+    color: #1976D2;
+}
+
+.info-box p {
+    margin: 0;
+    color: #555;
+}
+
+/* Upcoming List */
+.upcoming-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.upcoming-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.upcoming-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.upcoming-item i {
+    font-size: 2.5rem;
+    color: #FF9800;
+    padding: 15px;
+    background: #FFF3E0;
+    border-radius: 10px;
+}
+
+.upcoming-item h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.upcoming-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Awarded Grid */
+.awarded-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.awarded-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-left: 5px solid #2196F3;
+}
+
+.awarded-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.award-date {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.awarded-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.awarded-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.awarded-details p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.awarded-details strong {
+    color: #333;
+    margin-right: 8px;
+}
+
+/* Archive Section */
+.archive-search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.archive-search input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.archive-search input:focus {
+    outline: none;
+    border-color: #006400;
+}
+
+.archive-search button {
+    padding: 12px 25px;
+    background: #006400;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.archive-search button:hover {
+    background: #008000;
+}
+
+.archive-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.archive-filters select {
+    padding: 10px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: white;
+}
+
+.archive-info {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+}
+
+/* Guidelines Section */
+.guidelines-section {
+    margin-top: 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+}
+
+.guidelines-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #006400;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.guideline-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.guideline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.guideline-card i {
+    font-size: 3rem;
+    color: #006400;
+    margin-bottom: 20px;
+}
+
+.guideline-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.guideline-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.guideline-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #666;
+    position: relative;
+    padding-left: 25px;
+}
+
+.guideline-card ul li:last-child {
+    border-bottom: none;
+}
+
+.guideline-card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #006400;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tenders-header h1 {
+        font-size: 2rem;
+        flex-direction: column;
+    }
+    
+    .tender-stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .stat-card i {
+        font-size: 2rem;
+    }
+    
+    .tender-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        flex: 1;
+        min-width: 140px;
+    }
+    
+    .tenders-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tender-actions {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+    
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .tenders-section {
+        padding: 20px 15px;
+    }
+    
+    .tender-card {
+        padding: 20px;
+    }
+    
+    .guidelines-section {
+        padding: 25px 20px;
+    }
+}

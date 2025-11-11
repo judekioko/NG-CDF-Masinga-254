@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates | Masinga NG-CDF</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/news.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>
+                <img src="assets/images/cdf-logo.jpg" alt="Masinga Logo" class="logo">
+                Masinga NG-CDF Website
+            </h1>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="news.html" class="active"><i class="fas fa-newspaper"></i> News</a></li>
+                    <li><a href="tenders.html"><i class="fas fa-gavel"></i> Tenders</a></li>
+                    
+                    <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+                    <li><a href="management.html"><i class="fas fa-user-tie"></i> Management</a></li>
+                    <li><a href="allocations.html"><i class="fas fa-chart-pie"></i> Allocations</a></li>
+                    <li><a href="committee.html"><i class="fas fa-users"></i> Committee</a></li>
+                    <li><a href="downloads.html"><i class="fas fa-download"></i> Downloads</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="publications.html"><i class="fas fa-book"></i> Publications</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-envelope"></i> Contacts</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Advertisement Banner -->
+    <div class="ad-banner">
+        <div class="ad-content">
+            <i class="fas fa-bullhorn"></i>
+            <span>Support Local Development - Partner with Masinga NG-CDF</span>
+        </div>
+    </div>
+
+    <section class="news-section">
+        <div class="news-header">
+            <h1><i class="fas fa-newspaper"></i> News & Updates</h1>
+            <p>Stay informed about the latest developments in Masinga Constituency</p>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="news-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="newsSearch" placeholder="Search news...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All News</button>
+                <button class="filter-btn" data-category="education">Education</button>
+                <button class="filter-btn" data-category="infrastructure">Infrastructure</button>
+                <button class="filter-btn" data-category="security">Security</button>
+                <button class="filter-btn" data-category="community">Community</button>
+            </div>
+        </div>
+
+        <!-- Featured News Slider -->
+        <div class="featured-news">
+            <h2><i class="fas fa-star"></i> Featured News</h2>
+            <div class="featured-slider">
+                <div class="featured-slide active" data-category="education">
+                    <img src="assets/images/secondary-school-dorm1.jpg" alt="School Construction">
+                    <div class="featured-content">
+                        <span class="category-badge education">Education</span>
+                        <h3>New Dormitory Complex Completed at Masinga Secondary</h3>
+                        <p class="date"><i class="fas fa-calendar"></i> November 10, 2025</p>
+                        <p>The newly constructed dormitory at Masinga Secondary School can now accommodate 200 additional students, improving learning conditions and supporting COVID-19 protocols.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main News Grid -->
+        <div class="news-container">
+            <!-- Sidebar with Ads -->
+            <aside class="news-sidebar">
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-clock"></i> Recent Updates</h3>
+                    <div class="recent-list">
+                        <a href="#" class="recent-item">
+                            <span class="recent-date">Nov 11</span>
+                            <span class="recent-title">Borehole Project Launch in Kivaa</span>
+                        </a>
+                        <a href="#" class="recent-item">
+                            <span class="recent-date">Nov 9</span>
+                            <span class="recent-title">Bursary Applications Now Open</span>
+                        </a>
+                        <a href="#" class="recent-item">
+                            <span class="recent-date">Nov 7</span>
+                            <span class="recent-title">Road Maintenance Completed</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Advertisement Space -->
+                <div class="sidebar-ad">
+                    <div class="ad-label">Advertisement</div>
+                    <div class="ad-box">
+                        <i class="fas fa-ad"></i>
+                        <p>Your Ad Here</p>
+                        <small>Contact us for advertising opportunities</small>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-tags"></i> Categories</h3>
+                    <div class="category-list">
+                        <a href="#" class="category-item education">
+                            <i class="fas fa-graduation-cap"></i> Education <span>12</span>
+                        </a>
+                        <a href="#" class="category-item infrastructure">
+                            <i class="fas fa-road"></i> Infrastructure <span>8</span>
+                        </a>
+                        <a href="#" class="category-item security">
+                            <i class="fas fa-shield-alt"></i> Security <span>5</span>
+                        </a>
+                        <a href="#" class="category-item community">
+                            <i class="fas fa-users"></i> Community <span>15</span>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- News Grid -->
+            <div class="news-grid">
+                <article class="news-card" data-category="infrastructure">
+                    <div class="news-image">
+                        <img src="assets/images/kamangulu-borehole.jpg" alt="Borehole">
+                        <span class="category-badge infrastructure">Infrastructure</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Kamangulu Borehole Project Enhances Water Access</h3>
+                        <p class="news-meta">
+                            <i class="fas fa-calendar"></i> November 8, 2025
+                            <i class="fas fa-user"></i> CDF Admin
+                        </p>
+                        <p>The completion of the Kamangulu borehole project marks a significant milestone in improving water access for over 5,000 residents...</p>
+                        <a href="#" class="news-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="security">
+                    <div class="news-image">
+                        <img src="assets/images/kikumini-police-post.jpg" alt="Police Post">
+                        <span class="category-badge security">Security</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Kikumini Police Post Renovation Complete</h3>
+                        <p class="news-meta">
+                            <i class="fas fa-calendar"></i> November 5, 2025
+                            <i class="fas fa-user"></i> CDF Admin
+                        </p>
+                        <p>Enhanced facilities at Kikumini Police Post now provide better working conditions for officers, improving community safety response...</p>
+                        <a href="#" class="news-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="education">
+                    <div class="news-image">
+                        <img src="assets/images/secondary-school-dorm1.jpg" alt="School">
+                        <span class="category-badge education">Education</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>272 Classrooms Constructed Across Constituency</h3>
+                        <p class="news-meta">
+                            <i class="fas fa-calendar"></i> November 1, 2025
+                            <i class="fas fa-user"></i> CDF Admin
+                        </p>
+                        <p>The education sector receives a major boost with 272 new classrooms completed, significantly improving learning conditions for students...</p>
+                        <a href="#" class="news-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="community">
+                    <div class="news-image">
+                        <img src="assets/images/masinga-public-participation.jpg" alt="Public Participation">
+                        <span class="category-badge community">Community</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Public Participation Forums Schedule Announced</h3>
+                        <p class="news-meta">
+                            <i class="fas fa-calendar"></i> October 28, 2025
+                            <i class="fas fa-user"></i> CDF Admin
+                        </p>
+                        <p>Community members invited to participate in planning sessions for upcoming development projects across all five wards...</p>
+                        <a href="#" class="news-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="education">
+                    <div class="news-image">
+                        <div class="news-image-placeholder">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <span class="category-badge education">Education</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>44 Science Laboratories Equipped and Operational</h3>
+                        <p class="news-meta">
+                            <i class="fas fa-calendar"></i> October 25, 2025
+                            <i class="fas fa-user"></i> CDF Admin
+                        </p>
+                        <p>Science education gets a boost as 44 fully equipped laboratories across Masinga schools are now operational...</p>
+                        <a href="#" class="news-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="infrastructure">
+                    <div class="news-image">
+                        <div class="news-image-placeholder">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <span class="category-badge infrastructure">Infrastructure</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>NG-CDF Office Block Construction Progress</h3>
+                        <p class="news-meta">
+                            <i class="fas fa-calendar"></i> October 20, 2025
+                            <i class="fas fa-user"></i> CDF Admin
+                        </p>
+                        <p>The new NG-CDF office block nears completion, promising improved service delivery to constituents...</p>
+                        <a href="#" class="news-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Masinga NG-CDF. All Rights Reserved.</p>
+    </footer>
+
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/news.js"></script>
+</body>
+</html>
