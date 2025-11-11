@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Masinga NG-CDF official website: news, tenders, allocations, projects, downloads and contacts." />
+  <meta property="og:title" content="Masinga NG-CDF" />
+  <meta property="og:description" content="Empowering the community through sustainable development." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://masinga-ngcdf.example" />
+  <meta property="og:image" content="assets/images/cdf-logo.jpg" />
+  <link rel="icon" href="assets/images/cdf-logo.jpg" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   <title>Masinga NG-CDF</title>
   <link rel="stylesheet" href="assets/css/global.css" />
   <link rel="stylesheet" href="assets/css/index.css" />
@@ -11,9 +19,9 @@
 <body>
 
   <!-- Welcome Screen -->
-  <div id="welcome-screen">
+  <div id="welcome-screen" role="dialog" aria-modal="true" aria-hidden="false">
     <div class="welcome-content">
-      <img src="assets/images/cdf-logo.jpg" alt="CDF Logo" class="welcome-logo" />
+      <img src="assets/images/cdf-logo.jpg" alt="CDF Logo" class="welcome-logo" width="120" height="120" />
       <h1><i class="fas fa-landmark"></i>Welcome to Masinga NG-CDF</h1>
       <p>Empowering the community through sustainable development.</p>
       <button id="enter-site">Enter Website</button>
@@ -32,9 +40,9 @@
 
   <!-- RIGHT SIDE - Navigation & Menu Toggle -->
   <div class="header-right">
-    <nav>
+    <nav aria-label="Primary navigation">
       <ul>
-        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
         <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
         <li><a href="tenders.html"><i class="fas fa-gavel"></i> Tenders</a></li>
@@ -46,7 +54,7 @@
         <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
         <li><a href="publications.html"><i class="fas fa-book"></i> Publications</a></li>
         <li><a href="contacts.html"><i class="fas fa-envelope"></i> Contacts</a></li>
-        
+      </ul>
     </nav>
     <button class="menu-toggle" aria-label="Toggle menu">☰</button>
   </div>
@@ -65,7 +73,7 @@
    <h2><i class="fas fa-comment"></i> Message from the Manager</h2>
 <div class="manager-container">
   <div class="manager-photo-box">
-    <img src="Assets/images/fund-manager.jpg" alt="Fund Manager" class="manager-photo">
+    <img src="assets/images/fund-manager.jpg" alt="Fund Manager" class="manager-photo" width="120" height="120" loading="lazy">
     <p class="manager-name"><strong>Mr. Daniel Mwaluko</strong><br><span>Funds Account Manager</span></p>
   </div>
   <div class="manager-text">

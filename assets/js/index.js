@@ -8,8 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
     enterBtn.addEventListener("click", () => {
       welcomeScreen.style.transition = "opacity 0.8s ease";
       welcomeScreen.style.opacity = "0";
+      // Accessibility: mark dialog hidden and move focus to main nav toggle
+      welcomeScreen.setAttribute("aria-hidden", "true");
       setTimeout(() => {
         welcomeScreen.style.display = "none";
+        const menuToggle = document.querySelector(".menu-toggle");
+        if (menuToggle) {
+          menuToggle.focus();
+        }
       }, 800);
     });
   }
