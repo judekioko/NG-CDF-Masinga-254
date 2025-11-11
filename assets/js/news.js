@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initNewsSearch();
     initFeaturedSlider();
     initScrollAnimations();
+    initFullArticleNavigation();
 });
 
 // Category Filter Functionality
@@ -80,6 +81,9 @@ function initFeaturedSlider() {
     function showSlide(index) {
         slides.forEach(slide => slide.classList.remove('active'));
         slides[index].classList.add('active');
+        
+        // Update slider dots if they exist
+        updateSliderDots(index);
     }
 
     function nextSlide() {
@@ -90,7 +94,7 @@ function initFeaturedSlider() {
     // Auto advance slides every 5 seconds
     setInterval(nextSlide, 5000);
 
-    // Optional: Add navigation buttons
+    // Add navigation buttons
     createSliderControls();
 }
 
@@ -130,11 +134,7 @@ function createSliderControls() {
         dot.addEventListener('click', () => {
             slides.forEach(s => s.classList.remove('active'));
             slide.classList.add('active');
-            
-            // Update dot styles
-            controls.querySelectorAll('.slider-dot').forEach((d, i) => {
-                d.style.background = i === index ? 'white' : 'transparent';
-            });
+            updateSliderDots(index);
         });
         
         controls.appendChild(dot);
@@ -142,6 +142,118 @@ function createSliderControls() {
 
     slider.appendChild(controls);
 }
+
+function updateSliderDots(activeIndex) {
+    const dots = document.querySelectorAll('.slider-dot');
+    dots.forEach((dot, index) => {
+        dot.style.background = index === activeIndex ? 'white' : 'transparent';
+    });
+}
+
+// Full Article Navigation
+function initFullArticleNavigation() {
+    // Add click event listeners to all read more links
+    document.querySelectorAll('.read-more, .news-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const articleId = this.getAttribute('href');
+            if (articleId && articleId.startsWith('#')) {
+                showFullArticle(articleId.substring(1));
+            }
+        });
+    });
+
+    // Recent items click handler
+    document.querySelectorAll('.recent-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const articleId = this.getAttribute('href');
+            if (articleId && articleId.startsWith('#')) {
+                showFullArticle(articleId.substring(1));
+            }
+        });
+    });
+
+    // Back to news functionality
+    document.querySelectorAll('.back-to-news').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            hideFullArticle();
+        });
+    });
+
+    // ESC key to close article
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.querySelector('.full-article.active')) {
+            hideFullArticle();
+        }
+    });
+
+    // Check if page was loaded with a hash (direct link to article)
+    if (window.location.hash) {
+        const articleId = window.location.hash.substring(1);
+        showFullArticle(articleId);
+    }
+}
+
+// Full article display functionality
+function showFullArticle(articleId) {
+    const article = document.getElementById(articleId);
+    if (!article) {
+        console.warn('Article not found:', articleId);
+        return;
+    }
+
+    // Hide all full articles first
+    document.querySelectorAll('.full-article').forEach(article => {
+        article.style.display = 'none';
+        article.classList.remove('active');
+    });
+    
+    // Hide news sections
+    document.querySelector('.news-grid').style.display = 'none';
+    document.querySelector('.pagination').style.display = 'none';
+    document.querySelector('.featured-news').style.display = 'none';
+    document.querySelector('.news-controls').style.display = 'none';
+    document.querySelector('.news-sidebar').style.display = 'none';
+    
+    // Show the selected article
+    article.style.display = 'block';
+    article.classList.add('active');
+    
+    // Scroll to top of article
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Update browser history
+    history.pushState({ article: articleId }, '', `#${articleId}`);
+}
+
+function hideFullArticle() {
+    // Show news sections
+    document.querySelector('.news-grid').style.display = 'grid';
+    document.querySelector('.pagination').style.display = 'flex';
+    document.querySelector('.featured-news').style.display = 'block';
+    document.querySelector('.news-controls').style.display = 'flex';
+    document.querySelector('.news-sidebar').style.display = 'flex';
+    
+    // Hide all full articles
+    document.querySelectorAll('.full-article').forEach(article => {
+        article.style.display = 'none';
+        article.classList.remove('active');
+    });
+
+    // Clear URL hash
+    history.pushState('', document.title, window.location.pathname + window.location.search);
+}
+
+// Handle browser back/forward buttons
+window.addEventListener('popstate', function(event) {
+    if (event.state && event.state.article) {
+        showFullArticle(event.state.article);
+    } else {
+        hideFullArticle();
+    }
+});
 
 // Scroll Animations
 function initScrollAnimations() {
@@ -155,12 +267,15 @@ function initScrollAnimations() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
             }
         });
     }, observerOptions);
 
     // Observe all news cards
     document.querySelectorAll('.news-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
         observer.observe(card);
     });
 
@@ -201,17 +316,13 @@ document.querySelectorAll('.category-item').forEach(item => {
     item.addEventListener('click', function(e) {
         e.preventDefault();
         
-        // Extract category from classes
         const categories = ['education', 'infrastructure', 'security', 'community'];
         const category = categories.find(cat => this.classList.contains(cat));
         
         if (category) {
-            // Find and click the corresponding filter button
             const filterBtn = document.querySelector(`.filter-btn[data-category="${category}"]`);
             if (filterBtn) {
                 filterBtn.click();
-                
-                // Scroll to news grid
                 document.querySelector('.news-grid').scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'
@@ -221,45 +332,20 @@ document.querySelectorAll('.category-item').forEach(item => {
     });
 });
 
-// Recent items click handler (would normally load full article)
-document.querySelectorAll('.recent-item').forEach(item => {
-    item.addEventListener('click', function(e) {
-        e.preventDefault();
-        console.log('Loading article:', this.querySelector('.recent-title').textContent);
-        // In production, this would navigate to the full article page
-    });
-});
-
-// Read more button handlers
-document.querySelectorAll('.read-more, .news-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        console.log('Loading full article...');
-        // In production, this would navigate to the full article page
-        
-        // Visual feedback
-        this.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            this.style.transform = '';
-        }, 200);
-    });
-});
-
 // Add loading animation for images
-document.querySelectorAll('.news-image img').forEach(img => {
+document.querySelectorAll('.news-image img, .article-image').forEach(img => {
     img.addEventListener('load', function() {
         this.style.opacity = '1';
     });
     
-    // Set initial opacity
     img.style.opacity = '0';
     img.style.transition = 'opacity 0.5s ease';
 });
 
-// Export functions for potential use elsewhere
-window.newsModule = {
-    initNewsFilters,
-    initNewsSearch,
-    initFeaturedSlider,
-    initScrollAnimations
-};
+// Image error handling
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function() {
+        console.warn('Image failed to load:', this.src);
+        this.style.opacity = '1';
+    });
+});
